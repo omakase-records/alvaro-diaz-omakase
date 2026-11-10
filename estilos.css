@@ -1,0 +1,442 @@
+:root {
+    --primary: #6b0f24;          /* Rojo vino principal */
+    --primary-hover: #8c1632;    /* Rojo vino brillante al interactuar */
+    --accent: #b81434;           /* Rojo acento para detalles */
+    --bg-dark: #0f0f12;          /* Fondo principal ultra oscuro */
+    --card-bg: #18181c;          /* Fondo tarjetas oscuras */
+    --section-alt: #131317;      /* Fondo alternativo de secciones */
+    --text-main: #f1f1f5;        /* Texto principal claro */
+    --text-muted: #9e9ea7;       /* Texto secundario gris */
+    --border: #282830;           /* Borde sutil */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.seccion {
+    padding: 60px 0;
+}
+
+.fondo-suave {
+    background-color: var(--section-alt);
+}
+
+.titulo-seccion {
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-main);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.titulo-seccion::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* ======================================================
+   2. ENCABEZADO Y NAVEGACIÓN
+   ====================================================== */
+.encabezado {
+    background-color: rgba(24, 24, 28, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+    margin-left: 4px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--text-main);
+}
+
+/* ======================================================
+   3. HERO (PORTADA PRINCIPAL)
+   ====================================================== */
+.hero {
+    background: linear-gradient(rgba(15, 15, 18, 0.88), rgba(107, 15, 36, 0.75)), 
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-contenido h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.hero-contenido p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: #d1d1d6;
+}
+
+/* BOTONES */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid var(--primary-hover);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(184, 20, 52, 0.3);
+}
+
+.btn-bloque {
+    width: 100%;
+}
+
+/* ======================================================
+   4. GRILLA DE PRODUCTOS
+   ====================================================== */
+.grilla-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-servicio {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    text-align: center;
+    padding-bottom: 15px;
+    transition: transform 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-servicio:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.tarjeta-servicio img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.tarjeta-servicio h3 {
+    margin: 15px 15px 8px;
+    color: var(--text-main);
+    font-size: 18px;
+}
+
+.tarjeta-servicio p {
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 0 15px 15px;
+    flex-grow: 1;
+}
+
+.precio {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.tarjeta-servicio .btn {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+}
+
+/* ======================================================
+   5. GRILLA DE DESTACADOS / CATEGORÍAS
+   ====================================================== */
+.grilla-doctores {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tarjeta-doctor {
+    background-color: var(--card-bg);
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tarjeta-doctor:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+.tarjeta-doctor img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary);
+}
+
+.tarjeta-doctor h3 {
+    color: var(--text-main);
+    font-size: 18px;
+}
+
+.especialidad {
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* ======================================================
+   6. CONTACTO Y FORMULARIO
+   ====================================================== */
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.info-contacto h3 {
+    color: var(--text-main);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.info-contacto p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+.info-contacto strong {
+    color: var(--text-main);
+}
+
+.formulario-contacto {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.campo input, .campo textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.campo input:focus, .campo textarea:focus {
+    border-color: var(--primary);
+}
+
+/* ======================================================
+   7. PIE DE PÁGINA
+   ====================================================== */
+.pie-pagina {
+    background-color: #09090b;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid var(--border);
+}
+/* ======================================================
+   PANTALLA DE CARGA (LOADER)
+   ====================================================== */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Fondo con un degradado desde el negro al rojo vino */
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-hover) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Desaparece automáticamente después de 2.5 segundos */
+    animation: fadeOutLoader 0.5s ease-in-out 2.5s forwards;
+    
+}
+
+.loader-content {
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+.logo-loader {
+    font-size: 45px;
+    font-weight: bold;
+    color: var(--text-main);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    /* Animación de latido y brillo */
+    animation: pulseLogo 3.5s ease-in-out infinite;
+}
+
+.logo-loader span {
+    color: var(--accent);
+    margin-left: 5px;
+}
+
+/* Contenedor de la barra (fondo grisáceo) */
+.loading-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* La barra que se va llenando (color blanco) */
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--text-main);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Tarda 2 segundos en llenarse */
+    animation: fillBar 10s ease-in-out forwards;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fillBar {
+    0% { width: 0%; }
+    40% { width: 50%; } /* Pausa ligera a la mitad */
+    100% { width: 100%; }
+}
+
+@keyframes pulseLogo {
+    0% { transform: scale(1); opacity: 0.8; text-shadow: none; }
+    50% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 20px var(--accent); }
+    100% { transform: scale(1); opacity: 0.8; text-shadow: none; }
+}
+
+@keyframes fadeOutLoader {
+    0% { opacity: 1; visibility: visible; }
+    100% { 
+        opacity: 0; 
+        visibility: hidden; /* Permite hacer clic en la web debajo */
+        z-index: -1; 
+    }
+}
+/* 1. Barra de progreso: cambia 2s por 4.5s (para que termine justo antes de desvanecerse) */
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background-color: var(--text-main);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: fillBar 4.5s ease-in-out forwards; /* <--- CAMBIADO A 4.5s */
+}
+
+/* 2. Pantalla completa: cambia 2.5s por 5s (tiempo total para desaparecer) */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--primary-hover) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOutLoader 0.5s ease-in-out 5s forwards; /* <--- CAMBIADO A 5s */
+}
