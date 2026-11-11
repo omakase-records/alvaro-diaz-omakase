@@ -132,24 +132,32 @@
                 </div>
 
                 <!-- Formulario de mensaje -->
-                <form class="formulario-contacto" action="#" method="POST">
-                    <div class="campo">
-                        <label for="nombre">Nombre Artístico / Banda</label>
-                        <input type="text" id="nombre" required placeholder="¿Cómo te llamas?">
-                    </div>
+               <!-- Formulario conectado con FormSubmit -->
+<form class="formulario-contacto" action="https://formsubmit.co/TU_CORREO_AQUI@gmail.com" method="POST">
+    
+    <!-- Configuración oculta de FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://rcdanyyy26-gif.github.io/alvaro-diaz-omakase/">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de OMAKASE">
 
-                    <div class="campo">
-                        <label for="telefono">Enlace a tu Música (Soundcloud/Spotify)</label>
-                        <input type="text" id="telefono" required placeholder="Pega el link aquí">
-                    </div>
+    <div class="campo">
+        <label for="nombre">Nombre</label>
+        <!-- Es vital agregar el atributo name="..." a cada input -->
+        <input type="text" id="nombre" name="Nombre" required placeholder="Tu nombre">
+    </div>
 
-                    <div class="campo">
-                        <label for="mensaje">Cuéntanos sobre tu proyecto</label>
-                        <textarea id="mensaje" rows="4" required placeholder="Género musical, trayectoria, ¿qué buscas en un sello discográfico?"></textarea>
-                    </div>
+    <div class="campo">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="Correo" required placeholder="Para enviarte merch y fechas">
+    </div>
 
-                    <button type="submit" class="btn btn-bloque">Enviar Propuesta</button>
-                </form>
+    <div class="campo">
+        <label for="mensaje">¿Cuál es tu track favorito?</label>
+        <textarea id="mensaje" name="Mensaje" rows="2" required placeholder="Ej: Llori Pari, Babysita, Gatas..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-bloque">Suscribirse al Newsletter</button>
+</form>
             </div>
         </div>
     </section>
